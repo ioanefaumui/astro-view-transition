@@ -1,0 +1,52 @@
+---
+const navOptions = [
+  { href: "/", label: "Projetos" },
+  { href: "/sobre", label: "Sobre" },
+  { href: "/contato", label: "Contato" },
+];
+
+const url = new URL(Astro.request.url);
+---
+
+<header>
+  <nav class="container">
+    <a href="/">IOANE FAUMUI</a>
+    <ul>
+      {
+        navOptions.map((n) => (
+          <li>
+            <a href={n.href} class={url.pathname === n.href ? "active" : ""}>
+              {n.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-block: 2rem;
+    column-gap: 2rem;
+  }
+  a {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+  }
+  a:hover:not(.active) {
+    color: #fff;
+  }
+  .active {
+    color: var(--aqua);
+    font-weight: 600;
+  }
+</style>
