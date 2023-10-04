@@ -1,36 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Logos from "../components/Logos.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Websites e Projetos de programação web">
-  <main class="container">
-    <h1>Desenvolvimento Web e Design Responsivo</h1>
-    <p>
-      Meu nome é Ioane, sou desenvolvedor de software e trabalho com programação
-      de aplicativos e websites de alta performance
-    </p>
-    <button class="cta">Entre em contato</button>
+  <main>
+    <Hero />
+    <Logos />
+    <Projects />
   </main>
 </Layout>
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 800px;
-    text-align: center;
-  }
-  h1 {
-    font-size: 66px;
-    max-width: 795px;
-    line-height: 110%;
-  }
-  p {
-    margin-top: 1rem;
-    font-size: 22px;
-    max-width: 740px;
-    line-height: 140%;
-    opacity: 75%;
-  }
-</style>

@@ -1,0 +1,88 @@
+---
+import OpenIcon from "../components/OpenIcon.astro";
+
+const projects = [
+  { type: "Website", imageUrl: "/suflex.svg" },
+  { type: "Website", imageUrl: "/queroquitar.svg" },
+  { type: "Blog", imageUrl: "/queroquitar.svg" },
+  { type: "Web app", imageUrl: "/hireup.svg" },
+  { type: "Website", imageUrl: "/velocity.svg" },
+  { type: "Blog", imageUrl: "/noiceland.svg" },
+];
+---
+
+<section class="container" style="padding-block: 120px">
+  <h2>Projetos</h2>
+  <p>Explore alguns dos trabalhos incríveis</p>
+  <ul>
+    {
+      projects.map((p) => (
+        <li>
+          <a href={"/"}>
+            <img src={p.imageUrl} alt="" />
+            <div>
+              {p.type}
+              <span>
+                <OpenIcon />
+              </span>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+<style>
+  h2,
+  section > p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  section > p {
+    font-size: 20px;
+    opacity: 75%;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap: 1rem;
+    padding-top: 4rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  ul a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: rgb(24, 24, 24);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    aspect-ratio: 1;
+  }
+
+  li div {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    opacity: 75%;
+  }
+
+  li span {
+    display: flex;
+    width: 0px;
+    transition: width 300ms ease;
+  }
+
+  li a:hover span {
+    width: 16px;
+  }
+
+  li a:hover div {
+    column-gap: 0.5rem;
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+const logos = ["/astro.svg", "/next.svg", "/vercel.svg", "/nuxt.svg"];
+---
+
+<section class="container" style="padding-block: 120px">
+  {logos.map((l) => <img src={l} alt="" />)}
+</section>
+<style>
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  img {
+    opacity: 80%;
+  }
+</style>

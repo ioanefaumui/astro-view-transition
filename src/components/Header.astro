@@ -10,7 +10,7 @@ const url = new URL(Astro.request.url);
 
 <header>
   <nav class="container">
-    <a href="/">IOANE FAUMUI</a>
+    <a class="logo" href="/">IOANE FAUMUI</a>
     <ul>
       {
         navOptions.map((n) => (
@@ -34,13 +34,17 @@ const url = new URL(Astro.request.url);
     display: flex;
     justify-content: flex-end;
     padding-block: 2rem;
-    column-gap: 2rem;
+    column-gap: 4rem;
+  }
+  .logo {
+    font-family: "Days one", sans-serif;
+    font-size: 16px;
   }
   a {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 1rem;
+    padding-block: 1rem;
   }
   a:hover:not(.active) {
     color: #fff;
